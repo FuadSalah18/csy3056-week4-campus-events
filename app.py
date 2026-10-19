@@ -138,6 +138,6 @@ class EventsHandler(BaseHTTPRequestHandler):
 if __name__ == '__main__':
     with connect_db():
         pass
-    print('Campus Events running at http://127.0.0.1:5050')
+    print('Campus Events running at http://127.0.0.1:5000')
     print('Use sample booking names; do not enter real student data.')
-    ThreadingHTTPServer(('127.0.0.1', 5050), EventsHandler).serve_forever()
+    ThreadingHTTPServer(('127.0.0.1', 5000), EventsHandler).serve_forever()
