@@ -17,5 +17,11 @@ pipeline {
         stage('Archive Release') {
             steps { archiveArtifacts artifacts: 'dist/*.zip', fingerprint: true }
         }
+           stage('Build Metadata') {
+               steps {
+                   bat 'echo Build Number: %BUILD_NUMBER% > build-info.txt'
+                   archiveArtifacts artifacts: 'build-info.txt'
+               }
+           }
     }
 }
